@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+body{
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+
+section{
+	position: static;
+	width: 375px;
+	height: 812px;
+	left: 0px;
+	top: 0px;
+	border : 1px solid #ccc;
+	background: #0D0D0D;
+}
+
+.Logo{
+	padding: 20px;
+	padding-top: 50px;
+	padding-right: 12px;
+	padding-left: 25px;
+	padding-bottom: 304px;
+}
+
+.Bar{
+	padding: 10px;
+	padding-left: 25px;
+
+}
+.Button-1{
+	position: absolute;
+	font-family: 'Poppins', sans-serif;
+	background-color: #15BE77!important;
+	width: 325px !important;
+	height: 57px !important;
+	border: none;
+	color: #ffffff!important;
+	font-size: 18px;
+	border-radius: 15px;
+	padding-left: 25px;
+	padding: 0!important;
+	bottom: 136px;
+
+}
+
+.Button-2{
+	position: absolute;
+	font-family: 'Poppins';
+	background-color: #252525!important;
+	width: 325px !important;
+	height: 57px !important;
+	border: none;
+	color: #15BE77!important;
+	font-size: 14px;
+	border-radius: 15px;
+	padding-left: 25px;
+	padding: 0!important;
+	bottom: 61px;
+}
+
+.Button-Login{
+	position: absolute;
+	font-family: 'Poppins';
+	background-color: #15BE77!important;
+	width: 325px !important;
+	height: 57px !important;
+	border: none;
+	color: #ffffff!important;
+	font-size: 18px;
+	border-radius: 15px;
+	padding-left: 25px;
+	padding: 0!important;
+	bottom: 61px;
+
+}
+
+.Login-Logo{
+	padding-top: 44px;
+}
+
+.signupinfotext {
+    font-family: 'Poppins';
+    color: #FFFFFF;
+    font-size: 30px;
+    bottom: 362px;
+}
+.signupinfotext-confirm{
+	font-family: 'Poppins';
+    color: #868686;
+    font-size: 15px;
+    bottom: 362px;
+}
+
+form{
+	width: 20rem;
+	height: 28rem;
+	display: flex;
+	flex-direction: column;
+
+}
+label{
+	font-family: 'Poppins', sans-serif;
+	color: #ffffff!important;
+	font-size: 16px;
+	opacity: 0.7;
+	margin: 5%auto;
+	margin-left: 10%;
+}
+input{
+	width: 80%;
+	margin: 5%auto;
+	margin-bottom: 5%;
+	border: none;
+	outline: none;
+	background: transparent;
+	color: #ffffff;
+	border-bottom: 1px solid #53E88B;
+	opacity: .8;
+}
