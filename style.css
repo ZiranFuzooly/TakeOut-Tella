@@ -121,3 +121,19 @@ input{
 	border-bottom: 1px solid #53E88B;
 	opacity: .8;
 }
+.backButton{
+	position: absolute;
+	width: 45px;
+	height: 45px;
+	left: 20px;
+	top: 41px;
+	 
+}
+.voucherTitle{
+position: absolute;
+width: 347px;
+height: 64px;
+left: 14px;
+top: 244px;
+
+}
