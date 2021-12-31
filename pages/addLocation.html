@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Geolocation</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name = "viewport" content = "width = device-width, initial-scale = 1">
+    <script src = "https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src = "https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel = "stylesheet" href = "https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <style type="text/css">
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+
+      /* Optional: Makes the sample page fill the window. */
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      .custom-map-control-button {
+        background-color: #fff;
+        border: 0;
+        border-radius: 2px;
+        box-shadow: 0 1px 4px -1px rgba(0, 0, 0, 0.3);
+        margin: 10px;
+        padding: 0 0.5em;
+        font: 400 18px Roboto, Arial, sans-serif;
+        overflow: hidden;
+        height: 40px;
+        cursor: pointer;
+      }
+      .custom-map-control-button:hover {
+        background: #ebebeb;
+      }
+    </style>
+    <script>
+        /*
+         * Google Maps documentation: http://code.google.com/apis/maps/documentation/javascript/basics.html
+         * Geolocation documentation: http://dev.w3.org/geo/api/spec-source.html
+         */
+        let map,infoWindow;
+
+        function initMap() {
+            map = new google.maps.Map(document.getElementById("map"), {
+                center: { lat: -34.397, lng: 150.644 },
+                zoom: 15,
+            });
+            infoWindow = new google.maps.InfoWindow();
+        }
+            if ( navigator.geolocation ) {
+                function success(pos) {
+                    // Location found, show map with these coordinates
+                    drawMap(new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude));
+                }
+    
+                function fail(error) {
+                    drawMap(defaultLatLng);  // Failed to find location, show default map
+                }
+    
+                // Find the users current position.  Cache the location for 5 minutes, timeout after 6 seconds
+                navigator.geolocation.getCurrentPosition(success, fail, {maximumAge: 500000, enableHighAccuracy:true, timeout: 6000});
+            } else {
+                drawMap(defaultLatLng);  // No geolocation support, show default map
+            }
+    
+            function drawMap(latlng) {
+                var myOptions = {
+                    zoom: 15,
+                    center: latlng,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                };
+    
+                var map = new google.maps.Map(document.getElementById("map-canvas"), myOptions);
+    
+                // Add an overlay to the map of current lat/lng
+                var marker = new google.maps.Marker({
+                    position: latlng,
+                    map: map,
+                    title: "Greetings!"
+                });
+            };
+        </script>
+  </head>
+  <body>
+    <div data-role="page" id="map-page" data-url="map-page">
+        <div data-role="header" data-theme="a">
+            <h1>Maps</h1>
+        </div>
+        <div role="main" class="ui-content" id="map-canvas">
+            <script
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly"
+            async
+            ></script>
+        <!-- map loads here... -->
+        </div>
+    </div>
+  </body>
+</html>

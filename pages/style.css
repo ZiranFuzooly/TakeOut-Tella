@@ -1,12 +1,50 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
+/* Stack the two content containers */
+.main,
+.sidebar { 
+	display:block; 
+	width:100%; }
+
+/* First breakpoint at 576px */
+/* Inherits mobile styles, but floats containers to make columns */
+@media all and (min-width: 36em){
+	.main { 
+		float: left; 
+		width:60%; }
+	.sidebar { 
+		float: left; 
+		width:40%; }
+}
+
+/* Second breakpoint at 800px */
+/* Adjusts column proportions, tweaks base H1 */
+@media all and (min-width: 50em){
+	.main { 
+		width:70%;
+	 }
+	.sidebar { 
+		width:30%;
+	 }
+}
+
+p{
+	font-family: 'Poppins' !important;
+}
+
 body{
 	min-height: 100vh;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	background-color: #0D0D0D !important;
+	overflow: auto !important;
 }
 
+.ui-body-b, .ui-header, .header-pg.ui-grid-a, html .ui-body-b .ui-bar-inherit, .ui-bar.ui-bar-b{
+	background-color: #0D0D0D !important;
+	border: #0D0D0D !important;
+}
 
 section{
 	position: static;
@@ -139,12 +177,177 @@ top: 244px;
 
 }
 .bg{
-	background-color: #0D0D0D
-	;
+	background-color: #0D0D0D;
 }
 
-.bg2{
-	background-color: #0D0D0D
-	;
+/* Homepage */
+.header-pg .ui-block-a{
+	width: 80% !important;
+	font-family: 'Poppins';
+	font-size: 30px;
+	text-align: left !important;
 }
 
+.header-pg .ui-block-b{
+	width: 20% !important;
+	text-align: center !important;
+}
+
+span.food-category-header.ui-block-a {
+    width: 75% !important;
+}
+
+/* button.view-all-btn.ui-btn.ui-shadow.ui-corner-all {
+    width: 100% !important;
+} */
+
+.ui-input-search.ui-body-inherit.ui-corner-all.ui-shadow-inset.ui-input-has-clear {
+    margin-right: 20px;
+    margin-left: 20px;
+    height: 50px;
+	border-radius: 15px;
+}
+
+.ui-alt-icon.ui-icon-search:after, .ui-alt-icon .ui-icon-search:after, .ui-input-search:after{
+	width: 15px !important;
+}
+
+.ui-input-search input {
+    padding-left: 1.75em;
+    padding-top: 0.75em !important;
+	color: #ffffff !important;
+}
+
+.ui-page-theme-b .ui-btn.ui-btn-active, html .ui-bar-b .ui-btn.ui-btn-active, html .ui-body-b .ui-btn.ui-btn-active, html body .ui-group-theme-b .ui-btn.ui-btn-active, html head+body .ui-btn.ui-btn-b.ui-btn-active, .ui-page-theme-b .ui-checkbox-on:after, html .ui-bar-b .ui-checkbox-on:after, html .ui-body-b .ui-checkbox-on:after, html body .ui-group-theme-b .ui-checkbox-on:after, .ui-btn.ui-checkbox-on.ui-btn-b:after, .ui-page-theme-b .ui-flipswitch-active, html .ui-bar-b .ui-flipswitch-active, html .ui-body-b .ui-flipswitch-active, html body .ui-group-theme-b .ui-flipswitch-active, html body .ui-flipswitch.ui-bar-b.ui-flipswitch-active, .ui-page-theme-b .ui-slider-track .ui-btn-active, html .ui-bar-b .ui-slider-track .ui-btn-active, html .ui-body-b .ui-slider-track .ui-btn-active, html body .ui-group-theme-b .ui-slider-track .ui-btn-active, html body div.ui-slider-track.ui-body-b .ui-btn-active, html .ui-body-b .ui-focus{
+	box-shadow: 0 0 12px #53E88B !important;
+}
+
+.food-category-section {
+    margin: auto!important;
+    align-items: center !important;
+}
+
+.food-category-header {
+    font-family: 'Poppins';
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.view-all-btn {
+	width: 100% !important;
+    color: #fd8500!important;
+    font-size: 12px !important;
+    margin: 0px!important;
+    border-color: #0D0D0D !important;
+	background-color: #0D0D0D !important;
+}
+
+.food-tiles-section {
+    overflow-x: scroll;
+	overflow-y: scroll;
+    white-space: nowrap;
+    padding: 0 20px;
+    width: 100%;
+	text-align: center;
+}
+
+.food-tiles {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 180px;
+    min-width: 140px;
+    max-height: 180px;
+    max-width: 140px;
+	border-radius: 15px !important;
+    display: inline-block;
+    margin: 0 10px 0 0;
+	background-color: #2a2a2a;
+}
+
+.food-price{
+	font-size: 12px;
+}
+
+.food-maker{
+	font-size: 15px;
+}
+
+.menu-tiles{
+    position: relative;
+    width: 100%;
+    height: 100%;
+	border-radius: 15px !important;
+    display: inline-block;
+    margin: 10px;
+	background-color: #2a2a2a;
+}
+
+.menu-tiles.ui-block-a {
+    margin: 10px 0px 10px 0px;
+	min-height: 90px;
+	max-height: 90px;
+}
+
+.menu-tiles-section {
+    white-space: nowrap;
+    padding: 0 20px;
+	text-align: center;
+}
+
+.menu-content{
+	text-align: left !important;
+	padding-left: 10px !important;
+}
+
+.menu-price{
+	padding-top: 30px !important;
+	font-size: 16px !important;
+	color: #fead1d;
+}
+
+.ui-page-header-fixed {
+    padding-top: 0px !important;
+}
+
+img.menu-image.ui-block-a {
+    border-radius: 15px;
+    padding-top: 10px !important;
+    padding-left: 10px !important;
+}
+
+#map-page, #map-canvas { 
+	width: 100%; 
+	height: 100%; 
+	padding: 0; 
+}
+
+/* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+	   #map {
+		height: 100%;
+	  }
+	  
+	  /* Optional: Makes the sample page fill the window. */
+	  html,
+	  body {
+		height: 100%;
+		margin: 0;
+		padding: 0;
+	  }
+	  
+	  .custom-map-control-button {
+		background-color: #fff;
+		border: 0;
+		border-radius: 2px;
+		box-shadow: 0 1px 4px -1px rgba(0, 0, 0, 0.3);
+		margin: 10px;
+		padding: 0 0.5em;
+		font: 400 18px Roboto, Arial, sans-serif;
+		overflow: hidden;
+		height: 40px;
+		cursor: pointer;
+	  }
+	  .custom-map-control-button:hover {
+		background: #ebebeb;
+	  }
