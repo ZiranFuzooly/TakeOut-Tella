@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rate Restaurant</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name = "viewport" content = "width = device-width, initial-scale = 1">
+    <script type="text/javascript" href="../js/jquery.mobile.custom.js"></script>
+    <script type="text/javascript" href="../js/jquery.mobile.custom.min.js"></script>
+    <link rel="stylesheet" href="../css/jquery.mobile.custom.structure.css">
+    <link rel="stylesheet" href="../css/jquery.mobile.custom.structure.min.css">
+    <link rel="stylesheet" href="../css/jquery.mobile.custom.theme.css">
+    <link rel="stylesheet" href="../css/jquery.mobile.custom.theme.min.css">
+    <script src = "https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src = "https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel = "stylesheet" href = "https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <script src="https://kit.fontawesome.com/ec5c950466.js" crossorigin="anonymous"></script>
+    
+  </head>
+  <body class="ui-body-b ui-body" data-theme="b" style="background-color: #0D0D0D;">
+    <div data-role="page" class="ui-body-b" data-theme="b" style="background-color: #0D0D0D;">     
+            <div class="ui-grid-b"  data-theme="b">
+                <div class="ui-block-a"></div>
+                <img style="margin-top: 15px;" class="ui-block-b cartimage-content"
+                    src="../Image/mummysdelight.png" alt="food-item">
+            </div>
+            <div class="ui-grid-b" style="text-align: center;">
+                <h2 class="oder-detail-label" style="color: #ffffff;">Thank You! <br> Enjoy Your Meal</h2>
+                <h4 class="oder-detail-label" style="text-align: center;"><b>Please Rate Your Restaurant</b></h4>
+                <div>
+                    <p class="stars">
+                        <span>
+                            <a class="star-1" href="#">1</a>
+                            <a class="star-2" href="#">2</a>
+                            <a class="star-3" href="#">3</a>
+                            <a class="star-4" href="#">4</a>
+                            <a class="star-5" href="#">5</a>
+                        </span>
+                    </p>
+                </div>
+                <script>
+                    $('.stars a').on('click', function () {
+                        $('.stars span').addClass('active');
+
+                        $(this).addClass('active');
+                        $('.stars span').addClass('active');
+                    });
+                </script>
+            </div>
+        
+        <div data-role="footer" class="ui-footer-fixed" data-theme="b" style="background-color: #0D0D0D; margin-left: 17px; margin-bottom: 20px;">
+            <input style="font-size: 16px;" class="input-field" type="text" id="otherSuggestions"
+                placeholder="Leave Feedback">
+            <div class="ui-grid-b">
+            <div class="ui-block-a btn-contact-seller">
+                <a href="#enterOTP">
+                    <button class="ui-btn" style="font-weight: 900;"
+                        id="btnReview">
+                        Submit
+                    </button>
+                </a>
+            </div>
+            <div class="btn-skip ui-block-b ">
+                <a href="./home.html" data-transition="slidedown" data-prefetch="true">
+                    <p class="skip-link">Skip</p>
+                </a>
+            </div>
+        </div>
+    </div>
+    
+  </body>
+</html> 
