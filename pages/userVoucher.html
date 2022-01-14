@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/Main.css">
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"
+    />
+
+    <script src = "./javascript.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script>
+        var UserPoint=[
+        {id:1,
+         name:"Ziran Fuzooly",
+         points:10300
+        }]
+
+        var memTitle=[{
+          id:1,
+         img:"../Image/memberGold.png"
+        },
+        {
+          id:2,
+         img:"../Image/memberPlar.png"
+        },
+        {
+          id:3,
+         img:"../Image/memberSilver.png"
+        }]
+    function UserPoints() {
+    
+      for(var i=0; i <UserPoint.length ;i++){
+          document.getElementById("UserPoints").innerHTML+=
+           "<div class='Points'>"
+          +"<span style='color:white; font-size:25px'>"+UserPoint[i].name+"</span> </br>"
+          +"<span>"+UserPoint[i].points+" points </span>"
+          +"</br>"
+         
+           +"</div>"
+      }
+    }
+    function title(){
+      for(var i=0; i <UserPoint.length ;i++){
+      if(UserPoint[i].points>999){
+        document.getElementById("title").innerHTML +=
+        "<div>"
+        +" <img src='"+memTitle[1].img +"' />"
+        +"</div>"}
+      else if(UserPoint[i].points>499){
+        document.getElementById("title").innerHTML +=
+      "<div>"
+        +" <img src='"+memTitle[0].img+"'/>"
+        +"</div>"}
+        else if(UserPoint[i].points>299){
+        document.getElementById("title").innerHTML +=
+      "<div>"
+        +" <img src='"+memTitle[2].img+"' />"
+        +"</div>"}
+      
+    }
+  }
+  
+    function trial() {
+    var arr = [
+      {
+        id: 1,
+        name: "Get Rs.200 off on your next order",
+        value: "HnG500",
+      },
+      {
+        id: 2,
+        name: "Get Rs.200 off on your next order",
+        value: "Ac200V",
+      },
+      {
+        id: 3,
+        name: "Get Rs.200 off on your next order",
+        value: "MM150",
+      },
+      {
+        id: 4,
+        name: "Get Rs.200 off on your next order",
+        value: "CC3000H",
+      },
+      {
+        id: 5,
+        name: "Get Rs.200 off on your next order",
+        value: "CC3050H",
+      },
+    ];
+    for(var i=0; i <UserPoint.length ;i++){
+    if(UserPoint[i].points>999){
+    for (let i = 0; i < 5; i++) {
+      document.getElementById("voucherBox").innerHTML +=
+        "<div class='voucher-box'>" +
+        "<div class='ui-grid-a' style='margin: 10px 5px'>" +
+        "<div class='ui-block-a'>" +
+        "<span>" +
+        arr[i].name +
+        "</span>" +
+        "</div>" +
+        "<div class='ui-block-b'>" +
+        "<div style='float: right'>" +
+        "<div>" +
+        "<span class='use-code'>Use Code:</span>" +
+        "</div>" +
+        "<div class='usecode-box'>" +
+        "<span class='voucher-code'>" +
+        arr[i].value +
+        "</span>" +
+        "</div>" +
+        "</div>" +
+        "</div>" +
+        "</div>" +
+        "</div>";
+    }
+  }
+  else if(UserPoint[i].points>499){
+    for (let i = 0; i < 3; i++) {
+      document.getElementById("voucherBox").innerHTML +=
+        "<div class='voucher-box'>" +
+        "<div class='ui-grid-a' style='margin: 10px 5px'>" +
+        "<div class='ui-block-a'>" +
+        "<span>" +
+        arr[i].name +
+        "</span>" +
+        "</div>" +
+        "<div class='ui-block-b'>" +
+        "<div style='float: right'>" +
+        "<div>" +
+        "<span class='use-code'>Use Code:</span>" +
+        "</div>" +
+        "<div class='usecode-box'>" +
+        "<span class='voucher-code'>" +
+        arr[i].value +
+        "</span>" +
+        "</div>" +
+        "</div>" +
+        "</div>" +
+        "</div>" +
+        "</div>";
+    }
+  }
+  else if(UserPoint[i].points>299){
+    for (let i = 0; i < 1; i++) {
+      document.getElementById("voucherBox").innerHTML +=
+        "<div class='voucher-box'>" +
+        "<div class='ui-grid-a' style='margin: 10px 5px'>" +
+        "<div class='ui-block-a'>" +
+        "<span>" +
+        arr[i].name +
+        "</span>" +
+        "</div>" +
+        "<div class='ui-block-b'>" +
+        "<div style='float: right'>" +
+        "<div>" +
+        "<span class='use-code'>Use Code:</span>" +
+        "</div>" +
+        "<div class='usecode-box'>" +
+        "<span class='voucher-code'>" +
+        arr[i].value +
+        "</span>" +
+        "</div>" +
+        "</div>" +
+        "</div>" +
+        "</div>" +
+        "</div>";
+    }
+  }
+  else if(UserPoint[i].points<300){
+    document.getElementById("voucherBox").innerHTML +=
+    "<div>" +
+        "<span class='text-voucher'>No Vouchers Available</span>" +
+        "</div>" ;
+  }
+}
+  }
+
+  function start(){
+    UserPoints();
+    trial();
+    title();
+  }
+    </script>
+  </head>
+  <body class="ui-body-b ui-body" onload="start()">
+    <div data-role="page" id="coupon">
+      <div
+        data-role="main"
+        class="ui-content"
+        style="background-color: #0d0d0d; color: white"
+      >
+        <div>
+          <a onclick="location.href ='./profilePage.html';" style="background: none;">
+          <img src='../image/Group.png'/>
+          </a>
+          </button>
+        </div>
+        <br>
+        <div id="title"></div>
+     <br>
+        
+      
+     
+        <div id="UserPoints"></div>
+        <div style="margin: 1rem 0">
+          
+          <span style="font-size: 15px">Vouchers</span>
+        </div>
+        <div id="voucherBox"></div>
+       
+      </div>
+    </div>
+  </body>
+</html>

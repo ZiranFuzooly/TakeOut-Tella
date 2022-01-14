@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Takeout-Tella</title>
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name = "viewport" content = "width = device-width, initial-scale = 1">
+        <script src = "https://code.jquery.com/jquery-1.11.3.min.js"></script>
+        <script src = "https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+        <script src = "./javascript.js"></script>
+        <link rel="stylesheet" href="../css/Main.css">
+        <link rel = "stylesheet" href = "https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+        
+        <script src="https://kit.fontawesome.com/ec5c950466.js" crossorigin="anonymous"></script>
+        <script>
+            var data=[
+              {id:1,
+               restName: "Butter Boutique",
+               name:"Cheese Cake",
+               img:"../Image/cheese1.jpg",
+               weight:"1kg",
+               price:"2200"},
+
+               
+              {
+               id:2,
+               restName: "Butter Boutique",
+               name:"Mousse Cake",
+               img:"../Image/mousse1.jpeg",
+               weight:"2kg",
+               price:"1200"},
+               
+               {id:3,
+                restName:"A&M Cupcakes",
+                name:"Mousse Cake",
+                img:"../Image/mousse2.jpg",
+                weight:"1kg",
+                price:"1500"},
+                 
+               {id:4,
+                restName:"A&M Cupcakes",
+                name:"Chocolate Cake",
+                img:"../Image/image.jpg",
+                weight:"1kg",
+                price:"1500"},
+                
+                {id:5,
+                restName:"Z Kakes & Kup Kakes",
+                name:"Chocolate Cake",
+                img:"../Image/chcolate.jpg",
+                weight:"1kg",
+                price:"200"},
+
+                {id:6,
+                restName:"Z Kakes & Kup Kakes",
+                img:"../Image/cheese2.jpg",
+                name:"Cheese Cake",
+                weight:"1kg",
+                price:"1200"}
+              ]
+            function updateListview(sorting) {
+              var direction = ~sorting.indexOf("-asc") ? 1 : -1;
+              data.sort(function(a, b) {
+               return direction *(Number(a.price) - Number(b.price));
+               });
+
+               var directionx = ~sorting.indexOf("-asc") ? 1 : -1;
+              data.sort(function(a, b) {
+               return directionx *(Number(b.price) - Number(a.price));
+               });
+
+               var html = "";
+                $.each(data, function(index, item) {
+           
+                       html +=  '<li><div class="food-tiles-filter-section" id="foodList">';
+                       html +=  '  <div class="filter-image">';
+                       html +=  '  <button type="submit" class="food-tiles-filter" style="background-color:transparent; border-color:transparent;"> ';
+                        html +=   ' <img src="' + item.img + '"class="food-tiles-filter" />';
+                        html +=   ' <p class="text" style="font-size: 25px;">'+item.name+'</p>';
+                        html +=    ' <p class="weight"  style="font-size: 20px;"> '+ item.weight +'</p>';
+                        html +=   ' <p class="textR" style="font-size: 15px;">'+item.restName+'</p>';
+                        html +=    ' <p class="price-currency" style="font-size: 20px;"> LKR </p><p class="price"  style="font-size: 20px;"> '+ item.price +'</p> <p class="dash" style="font-size: 20px; padding-left:60%"> -- </p>';
+                        
+                        html +=     ' </button></li>  ';
+                });
+                $("#food").data("sort", sorting).empty().html(html).listview("refresh");
+              }
+             
+
+$(document).on("listviewcreate", "#food", function(event, ui) {
+  $("#price-sort").on("click", function(e) {
+    var sorting = $("#food").data("sort") == "price-asc" ? "price-desc" : "price-asc";
+    updateListview(sorting);
+  });
+});
+
+$(document).on("listviewcreate", "#food", function(event, ui) {
+  $("#price-sort-x").on("click", function(e) {
+    var sorting = $("#food").data("sortx") == "price-asc" ? "price-desc" : "price-asc";
+    updateListview(sorting);
+  });
+});
+
+
+$(document).on("pagecreate", "#page-one", function() {
+  updateListview("none");
+});
+
+   
+    </script>
+    </head>
+    <body class="" style="background-color: #0D0D0D;">
+        <div class="food-categories">
+            </div> 
+            <div role="main" class="ui-content ui-body-b ui-body">
+        <div role="main" class="ui-content bg">
+          <div class="filter-list">
+            <div class="left-btn">
+            <a id="price-sort" href="#" class="ui-btn ui-corner-all ui-icon-delete ui-btn-icon-left ui-mini filter-tabs" style="border-radius:  15px;height: 15px;">LKR low to high</a>
+            </div>
+            <div class="right-btn">
+            <a id="price-sort-x" href="#" class="ui-btn ui-corner-all ui-icon-delete ui-btn-icon-left ui-mini filter-tabs" style="border-radius:  15px;height: 15px;">LKR high to low</a>
+            </div>
+          </div>
+          <p class="food-category-section"> <span class="food-category-header ui-block-a"> Results </span>
+            <br>
+          <p class="text-no-item">Sorry ! No Items available</p>
+        </div>
+      </div> 
+      </div>
+     </div><!-- /page -->
+         </body>
+</html>
+
