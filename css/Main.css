@@ -482,8 +482,15 @@ span.food-category-header.ui-block-a {
 }
 
 .food-category-section {
-    margin: auto!important;
+    
     align-items: center !important;
+	margin-bottom: auto!important;
+	
+	
+}
+
+.foodFilter{
+	margin-top: -350px!important;
 }
 
 .food-category-header {
