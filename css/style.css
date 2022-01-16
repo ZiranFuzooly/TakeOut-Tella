@@ -211,7 +211,7 @@ top: 244px;
 }
 
 span.food-category-header.ui-block-a {
-    width: 75% !important;
+    width: 74% !important;
 }
 
 /* button.view-all-btn.ui-btn.ui-shadow.ui-corner-all {
@@ -448,4 +448,9 @@ button#btnReview {
 p.skip-link {
     color: #53E88B;
 	text-decoration: none !important;
+}
+
+html .ui-body-b a{
+	color: #ffffff !important;
+	font-weight: normal !important;
 }

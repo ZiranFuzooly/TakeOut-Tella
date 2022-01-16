@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Takeout-Tella</title>
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name = "viewport" content = "width = device-width, initial-scale = 1">
+        <script src = "https://code.jquery.com/jquery-1.11.3.min.js"></script>
+        <script src = "https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+        <link rel="stylesheet" href="../css/style.css">
+        
+        <link rel = "stylesheet" href = "https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+        <script src="https://kit.fontawesome.com/ec5c950466.js" crossorigin="anonymous"></script>
+        <style>
+            .large-font{
+                font-size:xxx-large;
+            }
+            .top-20{
+                position:relative;
+                top:20vh;
+            }
+            ion-icon.active{
+                animation:like 0.5s 1;
+                fill:red;
+                stroke:none;
+            }
+            ion-icon{
+                fill:transparent;
+                stroke:black;
+                stroke-width:30;
+                transition:all 0.5s;
+            }
+
+            @-webkit-keyframes like {
+                0%   { transform: scale(1); }
+                90%   { transform: scale(1.2); }
+                100% { transform: scale(1.1); }
+            }
+        </style>
+        <script>
+            let icon = document.querySelector('ion-icon');
+            icon.onclick = function(){
+            icon.classList.toggle('active');
+            }
+        </script>
+    </head>
+    <body class="ui-body-b ui-body">
+
+        <div data-role="page" class="ui-page ui-page-theme-b ui-page-active" style="background-color: #0d0d0d;">
+            <img src="../Image/submore.png" style="width: 100%; z-index: -1; opacity: 0.6;">
+            <div data-role="header" class="ui-header-fixed"  style="background-color: transparent !important;" >
+                <div data-role="header" style="background-color: transparent !important;">
+                    <img src="../Image/backButton2.png" style="width:35%;padding: 10px;" style="opacity: 1;">                   
+                </div>
+            </div><!-- /header -->
+    
+            <div role="main" class="ui-content ui-body-b ui-body">
+                <div class="ui-grid-a">
+                    <div class="ui-block-a">
+                        <h3>SubMore</h3>
+                    </div>
+                    <div class="ui-block-b">
+                        <div class="container">
+                            <div class='large-font text-center top-20'>
+                                <ion-icon name="heart">
+                                  <div class='red-bg'></div>
+                                </ion-icon>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- /content -->
+        </div><!-- /page -->
+</html>

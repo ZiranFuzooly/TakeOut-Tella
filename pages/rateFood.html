@@ -16,6 +16,40 @@
     <link rel = "stylesheet" href = "https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
     <script src="https://kit.fontawesome.com/ec5c950466.js" crossorigin="anonymous"></script>
+    <script>
+        function first() {
+        var y = 0;
+        var z = 1;
+        var x = +y + +z;
+        document.getElementById("demo").innerHTML = x;
+    }
+
+    function second() {
+        var y = 0;
+        var z = 2;
+        var x = +y + +z;
+        document.getElementById("demo").innerHTML = x;
+    }
+
+    function third() {
+        var y = 0;
+        var z = 3;
+        var x = +y + +z;
+        document.getElementById("demo").innerHTML = x;
+    }
+    function four() {
+        var y = 0;
+        var z = 4;
+        var x = +y + +z;
+        document.getElementById("demo").innerHTML = x;
+    }
+    function five() {
+        var y = 0;
+        var z = 5;
+        var x = +y + +z;
+        document.getElementById("demo").innerHTML = x;
+    }
+    </script>
     
   </head>
   <body class="ui-body-b ui-body" data-theme="b" style="background-color: #0D0D0D;">
@@ -31,11 +65,11 @@
                 <div>
                     <p class="stars">
                         <span>
-                            <a class="star-1" href="#">1</a>
-                            <a class="star-2" href="#">2</a>
-                            <a class="star-3" href="#">3</a>
-                            <a class="star-4" href="#">4</a>
-                            <a class="star-5" href="#">5</a>
+                            <a onlick="first()" class="star-1" href="#">1</a>
+                            <a onlick="second()" class="star-2" href="#">2</a>
+                            <a onlick="third()" class="star-3" href="#">3</a>
+                            <a onlick="four()" class="star-4" href="#">4</a>
+                            <a onlick="five()" class="star-5" href="#">5</a>
                         </span>
                     </p>
                 </div>
@@ -50,9 +84,11 @@
             </div>
         
         <div data-role="footer" class="ui-footer-fixed" data-theme="b" style="background-color: #0D0D0D; margin-left: 17px; margin-bottom: 20px;">
+            <input style="font-size: 16px;" class="input-field" type="text" id="otherSuggestions"
+                placeholder="Leave Feedback">
             <div class="ui-grid-b">
             <div class="ui-block-a btn-contact-seller">
-                <a href="#enterOTP">
+                <a href="./rateRestaurant.html" target="_self">
                     <button class="ui-btn" style="font-weight: 900;"
                         id="btnReview">
                         Submit
@@ -60,7 +96,7 @@
                 </a>
             </div>
             <div class="btn-skip ui-block-b ">
-                <a href="./home.html" data-transition="slidedown" data-prefetch="true">
+                <a href="./home.html" target="_self" data-transition="slidedown" data-prefetch="true">
                     <p class="skip-link">Skip</p>
                 </a>
             </div>
