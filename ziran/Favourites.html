@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>TakeOut Tella</title>
+    <meta name="viewport" content="width = device-width, initial-scale = 1" />
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.6/jquery.mobile-1.4.6.min.js"></script>
+    <link rel="stylesheet" href="css/MainZiran.css" />
+
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="JS/Main.js"></script>
+    <script src=" https://smtpjs.com/v3/smtp.js">
+    </script>
+    <script src="https://kit.fontawesome.com/ec5c950466.js" crossorigin="anonymous"></script>
+    <style>
+        @media all and (min-width: 23.4375em) {
+            .my-breakpoint.ui-grid-a .ui-block-a {
+                width: 590px;
+                height: 400px;
+            }
+            .my-breakpoint.ui-grid-a .ui-block-b {
+                width: 375px;
+                height: 360px;
+            }
+        }
+        
+        @media all and (min-width: 48em) {
+            .my-breakpoint.ui-grid-a .ui-block-a {
+                width: 900px;
+                height: 550px;
+            }
+            .my-breakpoint.ui-grid-a .ui-block-b {
+                width: 400px;
+                height: 450px;
+            }
+        }
+        
+        @media all and (min-width: 50.75em) {
+            .my-breakpoint.ui-grid-a .ui-block-a {
+                width: 812px;
+                height: 400px;
+            }
+            .my-breakpoint.ui-grid-a .ui-block-b {
+                width: 812px;
+                height: 400px;
+            }
+        }
+        
+        @media all and (min-width: 64em) {
+            .my-breakpoint.ui-grid-a .ui-block-a {
+                width: 1024px;
+                height: 370px;
+            }
+            .my-breakpoint.ui-grid-a .ui-block-b {
+                width: 400px;
+                height: 468px;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg">
+    <img class="Pattern" src="assets/images/Pattern.png" width="100%" />
+
+    <div data-role="page" id="bioDet">
+        <div data-role="main" class="ui-content container-2">
+            <a data-rel="back" class="back-icon"><img src="assets/images/back.png" /></a>
+
+
+            <div id="contact">
+                <a data-rel="share">
+
+                    <img src="assets/images/share.png" />
+                </a>
+                </a>
+            </div>
+            <div class="signup-section">
+
+                <div id="contactForm">
+
+                    <h1>Share Favourites</h1>
+
+
+                    <form action="#">
+
+                        <input placeholder="Email" type="email" required />
+                        <br/>
+                        <a onclick="sendFavList()">
+                            <button class="formBtn center-alignment" type="reset">Share</button>
+
+                        </a>
+
+                    </form>
+                </div>
+
+                <div class="signup-section">
+                    <h1>
+                        Your Favourites
+                    </h1>
+
+                    <h3 class="center-alignment">
+                        <p class="infotext-tick center-alignment" style="margin: 0 7%;">
+                            <input type="checkbox" class="mb-3 " id='checkall' />
+                        </p>
+                        Select All
+                    </h3>
+                    <div class="center-alignment">
+                        <div class="menu-tiles-section">
+                            <div class="menu-tiles ui-block-a">
+                                <div class="menu-details ui-grid-b">
+                                    <img src="assets/images/food1.png" class="menu-image ui-block-a" style="width:29%; padding: 5px;">
+                                    <div class="menu-content ui-block-b">
+                                        <p class="food-name">Shrimp Submarine</p>
+                                    </div>
+
+
+                                    <div class="menu-price ui-block-c">
+                                        <p>
+                                            <span class="menu-price">LKR 690</span>
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" class='checkbox' name="languages" id="ex2-check1" />
+                                        <label for="ex2-check1">
+                               
+                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="center-alignment">
+                            <div class="menu-tiles-section">
+                                <div class="menu-tiles-1 ui-block-a">
+                                    <div class="menu-details ui-grid-b">
+                                        <img src="assets/images/cake.png" class="menu-image ui-block-a" style="width:29%; padding: 5px;">
+                                        <div class="menu-content ui-block-b">
+                                            <p class="food-name">Chocolate Roll</p>
+                                        </div>
+
+
+                                        <div class="menu-price ui-block-c">
+                                            <p>
+                                                <span class="menu-price">LKR 750</span>
+                                            </p>
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" class='checkbox' name="languages" id="ex2-check1" />
+                                            <label for="ex2-check1">
+                             
+                      </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <br/>
+                        <div class="center-alignment">
+                            <div class="menu-tiles-section">
+                                <div class="menu-tiles-2 ui-block-a">
+                                    <div class="menu-details ui-grid-b">
+                                        <img src="assets/images/rice.png" class="menu-image ui-block-a" style="width:29%; padding: 5px;">
+                                        <div class="menu-content ui-block-b">
+                                            <p class="food-name">Chicken Fried Rice</p>
+                                        </div>
+
+
+                                        <div class="menu-price ui-block-c">
+                                            <p>
+                                                <span class="menu-price">LKR 530</span>
+                                            </p>
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" class='checkbox' name="languages" id="ex2-check1" />
+                                            <label for="ex2-check1">
+                                   
+                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // This is the second section with checkbox
+        $(document).ready(function() {
+            // Check and Uncheck All With Single Button
+            $("#box").click(function() {
+                if ($("#box").val() == "check all") {
+                    $(".cb-element").prop("checked", true);
+                    $("#box").val("uncheck all");
+                } else if ($("#box").val() == "uncheck all") {
+                    $(".cb-element").prop("checked", false);
+                    $("#box").val("check all");
+                }
+            });
+
+            // Select With Checkbox(Extra Feature)
+            $("#checkall").change(function() {
+                var checked = $(this).is(":checked");
+                if (checked) {
+                    $(".checkbox").each(function() {
+                        $(this).prop("checked", true);
+                    });
+                } else {
+                    $(".checkbox").each(function() {
+                        $(this).prop("checked", false);
+                    });
+                }
+            });
+
+            // Changing state of CheckAll checkbox
+            $(".checkbox").click(function() {
+                if ($(".checkbox").length == $(".checkbox:checked").length) {
+                    $("#checkall").prop("checked", true);
+                } else {
+                    // $("#checkall").removeAttr("checked");
+                    $("#checkall").prop("checked", false);
+                }
+            });
+        });
+    </script>
+
+    <script>
+        $(function() {
+
+            // contact form animations
+            $('#contact').click(function() {
+                $('#contactForm').fadeToggle();
+            })
+            $(document).mouseup(function(e) {
+                var container = $("#contactForm");
+
+                if (!container.is(e.target) // if the target of the click isn't the container...
+                    &&
+                    container.has(e.target).length === 0) // ... nor a descendant of the container
+                {
+                    container.fadeOut();
+                }
+            });
+
+        });
+    </script>
+
+
+
+
+
+    </div>
+</body>
+
+
+</html>

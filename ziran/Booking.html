@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>TakeOut Tella</title>
+    <meta name="viewport" content="width = device-width, initial-scale = 1" />
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.6/jquery.mobile-1.4.6.min.js"></script>
+    <link rel="stylesheet" href="css/MainZiran.css" />
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="https://checkout.stripe.com/checkout.js"></script>
+    <style>
+        @media all and (min-width: 23.4375em) {
+            .my-breakpoint.ui-grid-a .ui-block-a {
+                width: 590px;
+                height: 400px;
+            }
+            .my-breakpoint.ui-grid-a .ui-block-b {
+                width: 375px;
+                height: 360px;
+            }
+        }
+        
+        @media all and (min-width: 48em) {
+            .my-breakpoint.ui-grid-a .ui-block-a {
+                width: 900px;
+                height: 550px;
+            }
+            .my-breakpoint.ui-grid-a .ui-block-b {
+                width: 400px;
+                height: 450px;
+            }
+        }
+        
+        @media all and (min-width: 50.75em) {
+            .my-breakpoint.ui-grid-a .ui-block-a {
+                width: 812px;
+                height: 400px;
+            }
+            .my-breakpoint.ui-grid-a .ui-block-b {
+                width: 812px;
+                height: 400px;
+            }
+        }
+        
+        @media all and (min-width: 64em) {
+            .my-breakpoint.ui-grid-a .ui-block-a {
+                width: 1024px;
+                height: 370px;
+            }
+            .my-breakpoint.ui-grid-a .ui-block-b {
+                width: 400px;
+                height: 468px;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg">
+    <img src="assets/images/Pattern.png" width="100%" />
+
+    <div data-role="page" id="bioDet">
+        <div data-role="main" class="ui-content container-2">
+            <a href="CheckoutPayment.html" data-rel="back" class="back-icon"><img src="./assets/images/back.png" /></a>
+
+            <div class="signup-section center-alignment">
+
+                <h1>
+
+                </h1>
+
+                <form id="frmBooking" name="bookingForm" action="_self">
+                    <h4 class="center-alignment" style="font-family: 'poppins'; font-size: 18px;margin: 10px;color: grey;">Your Order</h4>
+                    <input class="food-checkout" id="item_name" name="item_name" type="text" value="Shrimp Submarine - 1">
+                    <h4 class="center-alignment" style="font-family: 'poppins'; font-size: 18px;margin: 10px;color: grey;">Total Amount - LKR</h4>
+                    <input class="food-checkout " id="total_value" name="total_value" type="text" value="550.00">
+                    <br>
+                    <a href="Favourites.html">
+                        <button class="Purchase" id="customButton">Purchase</button>
+                    </a>
+                    <a href="CheckoutPayment.html">
+                        <button class="cancel">Cancel</button>
+                    </a>
+                </form>
+
+                <div align="center" id="thankyouPayment"></div>
+
+                <script>
+                    jQuery(function($) {
+                        var $form = $('#frmBooking');
+                        var handler = StripeCheckout.configure({
+                            key: 'pk_test_cp21BcECf4kMMUbSlRlZlsMo',
+                            token: function(token) {
+                                // Use the token to create the charge with a server-side script.
+                                // You can access the token ID with `token.id`
+
+                                //This will be printed when the transaction is successful. To charge, server side scripting is required.
+                                if (token.id) {
+                                    $("#thankyouPayment").html("Thank you, your payment was successful!");
+
+                                    //You can also use the following code to re-submit the form content to another file for further processing.
+                                    //Don't forget to add action to your form
+                                    //$form.get(0).submit();
+
+                                    //Or save form data locally, using local storage.
+                                }
+                            }
+                        });
+
+
+                        $('#customButton').on('click', function(e) {
+                            // Code Section B  Open Checkout with further options
+                            handler.open({
+                                name: 'TakeOut Tella ',
+                                currency: 'LKR',
+                                description: $('#item_name').val(),
+                                amount: $('#total_value').val() * 100
+                            });
+                            e.preventDefault();
+                        });
+
+                        // Code Section C  Close Checkout on page navigation
+                        $(window).on('popstate', function() {
+                            handler.close();
+                        });
+                    });
+                </script>
+
+            </div>
+        </div>
+
+</body>
+
+</html>

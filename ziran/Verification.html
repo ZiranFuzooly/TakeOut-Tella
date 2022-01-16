@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>TakeOut Tella</title>
+    <meta name="viewport" content="width = device-width, initial-scale = 1" />
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.6/jquery.mobile-1.4.6.min.js"></script>
+    <link rel="stylesheet" href="css/MainZiran.css" />
+
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="JS/Main.js"></script>
+    <style>
+        @media all and (min-width: 23.4375em) {
+            .my-breakpoint.ui-grid-a .ui-block-a {
+                width: 590px;
+                height: 400px;
+            }
+            .my-breakpoint.ui-grid-a .ui-block-b {
+                width: 375px;
+                height: 360px;
+            }
+        }
+        
+        @media all and (min-width: 48em) {
+            .my-breakpoint.ui-grid-a .ui-block-a {
+                width: 900px;
+                height: 550px;
+            }
+            .my-breakpoint.ui-grid-a .ui-block-b {
+                width: 400px;
+                height: 450px;
+            }
+        }
+        
+        @media all and (min-width: 50.75em) {
+            .my-breakpoint.ui-grid-a .ui-block-a {
+                width: 812px;
+                height: 400px;
+            }
+            .my-breakpoint.ui-grid-a .ui-block-b {
+                width: 812px;
+                height: 400px;
+            }
+        }
+        
+        @media all and (min-width: 64em) {
+            .my-breakpoint.ui-grid-a .ui-block-a {
+                width: 1024px;
+                height: 370px;
+            }
+            .my-breakpoint.ui-grid-a .ui-block-b {
+                width: 400px;
+                height: 468px;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg">
+    <img src="assets/images/Pattern.png" width="100%" />
+    </div>
+
+    <div data-role="page" id="enterOTP">
+        <div data-role="main" class="ui-content container-2">
+            <a href="Signup.html" data-rel="back" class="back-icon"><img src="assets/images/back.png"></a>
+            <div class="signup-section">
+                <h1>Enter 4 Digit Verification Code</h1>
+                <p class="signupinfotext-ob ">
+                    Code Sent to your Mobile Number
+                </p>
+                <div class="center-alignment" style="padding: top -200px; ;">
+                    <p class="signupinfotext" id=otptelno></p>
+                    <p class="signupinfotext" id=resendOTPtext></p>
+                    <input class="otp-input-field" type="tel" id="inputOtp" placeholder="0 0 0 0" onkeyup="verifyOTP('inputOtp')" maxlength="4">
+                </div>
+            </div>
+
+            <div class="center-alignment">
+                <p class="resendOTP" id="otpTimermsg">This code will expire in 30:00</p>
+
+            </div>
+        </div>
+    </div>
+
+    </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>TakeOut Tella</title>
+    <meta name="viewport" content="width = device-width, initial-scale = 1" />
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.6/jquery.mobile-1.4.6.min.js"></script>
+    <link rel="stylesheet" href="css/MainZiran.css" />
+
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+
+    </style>
+    <script src="js/main.js"></script>
+</head>
+
+<body class="bg">
+    <img src="assets/images/Pattern.png" width="100%" />
+    </div>
+    <div data-role="page" id="enterMobileNo">
+        <div data-role="main" class="ui-content container-2">
+            <a data-rel="back" class="back-icon"><img src="assets/images/back.png"></a>
+            <div class="signup-section">
+                <h1>Enter your<br> mobile number</h1>
+                <p class="signupinfotext-1">We will send you a confirmation code</p>
+                <input class="input-field" type="tel" id="inputTel" placeholder="+94 77 046 1020" onkeyup="enableButton('inputTel')" maxlength="10">
+                <!-- <input class="input-field" type="pw" id="password" placeholder="Password" onkeyup="enableButton('password')" maxlength="10">  -->
+
+            </div>
+            <div class="center-alignment">
+                <a href="Verification.html">
+                    <button disabled class="button-active" id="btnOTPtest" onclick="submitPhone()"> 
+                      Login
+                  </button>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

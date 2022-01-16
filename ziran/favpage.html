@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+</head>
+
+<body>
+    <!-- This is page 1-->
+    <div data-role="page" id="item1">
+
+        <div data-role="header" data-position="fixed">
+            <!-- header-->
+            <h1>Item 1</h1>
+        </div>
+
+        <div role="main" class="ui-content">
+            <!-- main contain-->
+
+            <!-- buttons allowing navigation to item 1 and favourites pages-->
+            <a href="#item2" class="ui-btn ui-btn-inline">Item 2 page</a>
+            <a href="#favourites" class="ui-btn ui-btn-inline">Favourites page</a>
+
+            <p>Here is all the details for item 1</p>
+
+            <!-- favourites button-->
+            <fieldset data-role="controlgroup" data-type="horizontal">
+                <input type="checkbox" name="favourite1" id="favourite1" class="custom">
+                <label for="favourite1"><span class="ui-icon-star ui-btn-icon-left">Add to favourites</span></label>
+            </fieldset>
+
+        </div>
+        <!-- end main contain-->
+
+        <div data-role="footer" data-position="fixed">
+            <!-- footer-->
+            <h1>Footer</h1>
+        </div>
+    </div>
+    <!-- end of page 1-->

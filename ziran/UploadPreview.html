@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>TakeOut Tella</title>
+    <meta name="viewport" content="width = device-width, initial-scale = 1" />
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.6/jquery.mobile-1.4.6.min.js"></script>
+    <link rel="stylesheet" href="css/MainZiran.css" />
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="JS/Main.js"></script>
+
+
+    <style>
+        @media all and (min-width: 23.4375em) {
+            .my-breakpoint.ui-grid-a .ui-block-a {
+                width: 590px;
+                height: 400px;
+            }
+            .my-breakpoint.ui-grid-a .ui-block-b {
+                width: 375px;
+                height: 360px;
+            }
+        }
+        
+        @media all and (min-width: 48em) {
+            .my-breakpoint.ui-grid-a .ui-block-a {
+                width: 900px;
+                height: 550px;
+            }
+            .my-breakpoint.ui-grid-a .ui-block-b {
+                width: 400px;
+                height: 450px;
+            }
+        }
+        
+        @media all and (min-width: 50.75em) {
+            .my-breakpoint.ui-grid-a .ui-block-a {
+                width: 812px;
+                height: 400px;
+            }
+            .my-breakpoint.ui-grid-a .ui-block-b {
+                width: 812px;
+                height: 400px;
+            }
+        }
+        
+        @media all and (min-width: 64em) {
+            .my-breakpoint.ui-grid-a .ui-block-a {
+                width: 1024px;
+                height: 370px;
+            }
+            .my-breakpoint.ui-grid-a .ui-block-b {
+                width: 400px;
+                height: 468px;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg">
+    <img src="assets/images/Pattern.png" width="100%" />
+
+    <div data-role="page" id="UploadPreview">
+        <div data-role="main" class="ui-content container-2">
+            <a href="ImageUpload.html" data-rel="back" class="back-icon"><img src="assets/images/back.png" /></a>
+
+            <div class="signup-section">
+
+                <h1> Preview Your Profile Picture</h1>
+                <div class="center-alignment">
+                    <form id="form1" runat="server">
+                        <input type='file' id="file-input" />
+                        <div id='img_contain'>
+                            <img id="image-preview" align='middle' src="http://www.clker.com/cliparts/c/W/h/n/P/W/generic-image-file-icon-hi.png" alt="your image" title='' />
+                        </div>
+                    </form>
+                </div>
+                <script>
+                    function readURL(input) {
+                        if (input.files && input.files[0]) {
+                            var reader = new FileReader();
+                            reader.onload = function(e) {
+                                $('#image-preview').attr('src', e.target.result);
+                                $('#image-preview').hide();
+                                $('#image-preview').fadeIn(650);
+                            }
+                            reader.readAsDataURL(input.files[0]);
+                        }
+                    }
+
+                    $("#file-input").change(function() {
+                        readURL(this);
+                    });
+                </script>
+                <div class="center-alignment">
+                    <a href="../pages/addLocation.html">
+                        <button class="button-active-image">
+      Next
+    </button>
+                    </a>
+
+
+
+                </div>
+            </div>
+
+
+</body>
+
+</html>

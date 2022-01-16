@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>TakeOut Tella</title>
+    <meta name="viewport" content="width = device-width, initial-scale = 1" />
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.6/jquery.mobile-1.4.6.min.js"></script>
+    <link rel="stylesheet" href="css/MainZiran.css" />
+
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="JS/Main.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js">
+    </script>
+    <style>
+        @media all and (min-width: 23.4375em) {
+            .my-breakpoint.ui-grid-a .ui-block-a {
+                width: 590px;
+                height: 400px;
+            }
+            .my-breakpoint.ui-grid-a .ui-block-b {
+                width: 375px;
+                height: 360px;
+            }
+        }
+        
+        @media all and (min-width: 48em) {
+            .my-breakpoint.ui-grid-a .ui-block-a {
+                width: 900px;
+                height: 550px;
+            }
+            .my-breakpoint.ui-grid-a .ui-block-b {
+                width: 400px;
+                height: 450px;
+            }
+        }
+        
+        @media all and (min-width: 50.75em) {
+            .my-breakpoint.ui-grid-a .ui-block-a {
+                width: 812px;
+                height: 400px;
+            }
+            .my-breakpoint.ui-grid-a .ui-block-b {
+                width: 812px;
+                height: 400px;
+            }
+        }
+        
+        @media all and (min-width: 64em) {
+            .my-breakpoint.ui-grid-a .ui-block-a {
+                width: 1024px;
+                height: 370px;
+            }
+            .my-breakpoint.ui-grid-a .ui-block-b {
+                width: 400px;
+                height: 468px;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg">
+
+    <script>
+        var points = 10
+        getPrice = function() {
+            const codes = ["ghh-200", "nnn-200", "his-150", "win-190"];
+            var numVal1 = 750;
+            if (document.getElementById("totalx").value = codes.includes(document.getElementById("discount").value)) {
+                const myArray = document.getElementById("discount").value.split("-");
+                var numVal2 = Number(myArray[1]);
+                var totalValue = numVal1 - numVal2
+                document.getElementById("total").value = totalValue;
+            } else {
+                var totalValue = numVal1
+                document.getElementById("total").value = totalValue;
+
+            }
+        }
+
+        getPoints = function() {
+            var numValp = 750;
+            // var numValp = Number(document.getElementById("price").value);
+            var points = (numValp / 100) * 2
+            alert("Congradulations! You have received " + points + " points");
+
+
+        }
+
+        addPoints = function() {
+            var newPoints = points + Number(document.getElementById("pointTot").value)
+            let text = prompt("Congradulations!" + newPoints + "added to account")
+            document.getElementById("newPoints").value = newPoints;
+        }
+    </script>
+    <img src="assets/images/Pattern.png" width="100%" />
+
+    <div data-role="page" id="OrderDetails">
+        <div data-role="main" class="ui-content container-2">
+            <a data-rel="back" class="back-icon"><img src="assets/images/back.png" /></a>
+
+
+
+            <div data-role="content" class="signup-section">
+                <h1>
+                    Order Details
+                </h1>
+
+                <div class="center-alignment">
+                    <div class="menu-tiles ui-block-a ">
+
+
+                        <div data-role="content" class="menu-details ui-grid-b ">
+                            <img src="assets/images/food1.png" class="menu-image ui-block-a" style="width: 80px; height: 80px; margin: 10px;">
+
+                            <div class="signupinfotext-food1 center-alignment">
+                                <p class="signupinfotext-food1 text-align-center" style="margin: 0 7%;">
+                                    Shrimp Submarine
+                                </p>
+                            </div>
+                            <div class="signupinfotext-food1-1 center-alignment">
+                                <p class="signupinfotext-food1-1 text-align-center" style="margin: 0 7%;">
+                                    Sub More
+                                </p>
+                            </div>
+                            <div class="signupinfotext-food1-2 center-alignment">
+                                <p class="signupinfotext-food1-2 text-align-center" style="margin: 0 7%;">
+                                    LKR 690
+                                </p>
+
+                                <div class="number">
+                                    <span class="minus" style="font-size: 25px;"> - </span>
+                                    <input class="cart" id="cart" type="text" value="1" />
+                                    <span class="plus" style="font-size: 25px;">+</span>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    </div>
+
+    </div>
+
+
+
+    </div>
+    </div>
+
+    </div>
+
+
+    <div class="center-alignment">
+
+
+        <div class="menu-tiles-checkout">
+            <div class="menu-tiles-checkout-1 ui-block-a">
+                <div class="checkout-text-1">
+                    <p class="checkout-text-1 " style="margin: 0 6%;">
+                        Sub-Total
+                    </p>
+                </div>
+                <div class="checkout-text-price">
+                    <p class="checkout-text-price " style="margin: 0 6%;">
+                        LKR 690
+                    </p>
+                </div>
+                <div class="checkout-text-delivery">
+                    <p class="checkout-text-delivery " style="margin: 0 6%;">
+                        Delivery
+                    </p>
+                </div>
+
+                <div class="checkout-text-delprice">
+                    <p class="checkout-text-delprice " style="margin: 0 6%;">
+                        LKR 60
+                    </p>
+                </div>
+                <div class="checkout-text-promo">
+                    <p class="checkout-text-promo " style="margin: 0 6%;">
+                        .
+                    </p>
+                </div>
+
+                <br/>
+                <div class="checkout-text-total">
+                    <p class="checkout-text-total " style="margin: 0 6%;">
+                        Total
+                    </p>
+                </div>
+                <div class="checkout-text-totprice">
+                    <p class="checkout-text-totprice " id="total_value" style="margin: 0 6%;">
+                        LKR 750
+                    </p>
+                </div>
+                <div id="contact-promo">
+                    <a data-rel="share">
+
+
+                        <button class="button-checkout-promo formBtn-promo center-alignment">
+                    
+                    <p class="checkout-btntext-promo text-align-center" style="margin: 0 6%;">
+                      Add Promo code
+                  </p>
+                    </button>
+                    </a>
+                </div>
+                <div id="contactForm-promo">
+
+                    <h1>Add Promo Code</h1>
+
+                    <input id="discount" placeholder="Promo Code" required />
+                    <br/>
+                    <a onclick="getPrice()">
+                        <button class="formBtn-pr-r center-alignment">Enter Promo</button>
+
+                    </a>
+
+                    <a href="CheckoutPayment.html">
+                        <p onclick="getPoints()">
+                            <button class="formBtn-pr-l center-alignment">Confirm Order</button>
+
+                        </p>
+                    </a>
+                    <div class="checkout-text-total">
+                        <p class="checkout-text-total " style="margin: 0 6%;">
+                            Grand Total
+                        </p>
+                    </div>
+                    <div class="checkout-text-totprice-promo">
+                        <input readonly id="total" style="color: beige;">
+                        <input type="hidden" id="totalx" style="display: block;">
+                    </div>
+
+
+                </div>
+
+                <a href="CheckoutPayment.html">
+                    <button class="button-checkout-total">
+                    
+                  <p onclick ="getPoints()" class="checkout-btntext-total text-align-center" style="margin: 0 6%;">
+                    Confirm Order
+                </p>
+                  </button>
+                </a>
+                <img class="img-pattern2" src="./assets/images/Pattern2.png" width="80%" />
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    </div>
+    </div>
+    </div>
+    </div>
+
+
+
+
+    </div>
+    <script>
+        $(function() {
+
+            // contact form animations
+            $('#contact-promo').click(function() {
+                $('#contactForm-promo').fadeToggle();
+            })
+            $(document).mouseup(function(e) {
+                var container = $("#contactForm-promo");
+
+                if (!container.is(e.target) // if the target of the click isn't the container...
+                    &&
+                    container.has(e.target).length === 0) // ... nor a descendant of the container
+                {
+                    container.fadeOut();
+                }
+            });
+
+        });
+    </script>
+    <script>
+        $(document).ready(function() {
+            $('.minus').click(function() {
+                var $input = $(this).parent().find('input');
+                var count = parseInt($input.val()) - 1;
+                count = count < 1 ? 1 : count;
+                $input.val(count);
+                $input.change();
+                return false;
+            });
+            $('.plus').click(function() {
+                var $input = $(this).parent().find('input');
+                $input.val(parseInt($input.val()) + 1);
+                $input.change();
+                return false;
+            });
+        });
+    </script>
+</body>
+
+</html>

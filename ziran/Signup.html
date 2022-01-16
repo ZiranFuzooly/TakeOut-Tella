@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>TakeOut Tella</title>
+    <meta name="viewport" content="width = device-width, initial-scale = 1" />
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.6/jquery.mobile-1.4.6.min.js"></script>
+    <link rel="stylesheet" href="css/MainZiran.css" />
+
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="JS/Main.js"></script>
+    <style>
+        @media all and (min-width: 23.4375em) {
+            .my-breakpoint.ui-grid-a .ui-block-a {
+                width: 590px;
+                height: 400px;
+            }
+            .my-breakpoint.ui-grid-a .ui-block-b {
+                width: 375px;
+                height: 360px;
+            }
+        }
+        
+        @media all and (min-width: 48em) {
+            .my-breakpoint.ui-grid-a .ui-block-a {
+                width: 900px;
+                height: 550px;
+            }
+            .my-breakpoint.ui-grid-a .ui-block-b {
+                width: 400px;
+                height: 450px;
+            }
+        }
+        
+        @media all and (min-width: 50.75em) {
+            .my-breakpoint.ui-grid-a .ui-block-a {
+                width: 812px;
+                height: 400px;
+            }
+            .my-breakpoint.ui-grid-a .ui-block-b {
+                width: 812px;
+                height: 400px;
+            }
+        }
+        
+        @media all and (min-width: 64em) {
+            .my-breakpoint.ui-grid-a .ui-block-a {
+                width: 1024px;
+                height: 370px;
+            }
+            .my-breakpoint.ui-grid-a .ui-block-b {
+                width: 400px;
+                height: 468px;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg">
+    <img src="assets/images/Pattern.png" width="100%" />
+    </div>
+    <div data-role="page" id="enterMobileNo">
+        <div data-role="main" class="ui-content container-2">
+
+
+            <!-- <img class="item-image"
+            src="/Volumes/Zee Backups/Final Year/Semester 01/Mobile UI:UX/TakeOut Tella-Test/assets/images/Pattern.png"
+            width="100%" 
+          /> -->
+            <a href="OnBoarding1.html" data-rel="back" class="back-icon"><img src="assets/images/back.png"></a>
+            <div class="signup-section">
+
+                <h1>Enter your<br> mobile number</h1>
+                <p class="signupinfotext-1">We will send you a confirmation code</p>
+                <div class="center-alignment">
+                    <input class="input-field " type="tel" id="inputTel" placeholder="+94 77 046 1020" onkeyup="enableButton('inputTel')" maxlength="10">
+                </div>
+            </div>
+            <div class="center-alignment">
+                <a href="Verification.html">
+                    <button disabled class="button-active" id="btnOTPtest" onclick="submitPhone()"> 
+                      Create Account
+                  </button>
+                </a>
+                <div class="account">
+
+                    <h4><u>Already Have an Account!</u></h4>
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</body>
+
+</html>
